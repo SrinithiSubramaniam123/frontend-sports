@@ -1,0 +1,705 @@
+/* ============================================================
+   PEAKFORM SPORTS ACADEMY — STYLESHEET
+   Bootstrap 5 compatible custom styles.
+   Palette: deep teal + gold accent.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg:           #f5fffd;
+  --surface:      #ffffff;
+  --surface-alt:  #eafcf8;
+  --ink:          #103838;
+  --ink-soft:     #5a7a7a;
+  --line:         #d6f1ee;
+
+  --primary:      #00A86B;
+  --primary-dark: #007A4D;
+  --primary-deep: #004D33;
+
+  --accent:       #FFD700;
+  --accent-dark:  #E6C200;
+
+  --danger:       #FF3131;
+
+  --font-display: 'Oswald', 'Segoe UI', sans-serif;
+  --font-body:    'Inter', 'Segoe UI', sans-serif;
+
+  --max-w:    1180px;
+  --radius:   14px;
+  --radius-sm: 8px;
+  --shadow:   0 14px 34px -16px rgba(0,168,107,0.22);
+  --shadow-sm:0 6px 16px -8px rgba(0,168,107,0.18);
+}
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: .5em;
+}
+p { color: var(--ink-soft); }
+button { font-family: inherit; cursor: pointer; }
+
+/* ============================================================
+   NAVBAR (Bootstrap override)
+   ============================================================ */
+.navbar {
+  background: rgba(245,255,253,.96) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(145deg, var(--primary), var(--accent));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1rem; font-weight: 700;
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 1.2rem;
+  color: var(--primary-deep) !important;
+}
+.brand-sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: .55rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--ink-soft);
+  line-height: 1;
+}
+.navbar-nav .nav-link {
+  font-family: var(--font-display);
+  font-size: .88rem; letter-spacing: .5px;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--ink) !important;
+  position: relative; padding: 8px 12px;
+  transition: color .2s;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { color: var(--primary) !important; }
+.navbar-nav .nav-link.active::after {
+  content: ""; position: absolute; left: 12px; right: 12px;
+  bottom: 2px; height: 3px;
+  background: var(--accent); border-radius: 2px;
+}
+.btn-accent {
+  background: var(--accent); color: var(--primary-deep);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: .88rem; letter-spacing: .4px;
+  text-transform: uppercase; border: none;
+  transition: transform .18s, box-shadow .18s, background .18s;
+}
+.btn-accent:hover {
+  background: var(--accent-dark); color: var(--primary-deep);
+  transform: translateY(-2px); box-shadow: var(--shadow-sm);
+}
+.btn-pf-primary {
+  background: var(--primary); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: .9rem; letter-spacing: .4px;
+  text-transform: uppercase; border: none;
+  transition: transform .18s, box-shadow .18s, background .18s;
+}
+.btn-pf-primary:hover {
+  background: var(--primary-dark); color: #fff;
+  transform: translateY(-2px); box-shadow: var(--shadow-sm);
+}
+.btn-pf-outline {
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,.55);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: .9rem; letter-spacing: .4px;
+  text-transform: uppercase;
+  transition: background .18s, transform .18s;
+}
+.btn-pf-outline:hover { background: rgba(255,255,255,.12); color:#fff; transform: translateY(-2px); }
+
+/* ============================================================
+   LANE DIVIDER (signature track motif)
+   ============================================================ */
+.lane-divider {
+  height: 34px;
+  background-color: var(--primary-deep);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0px, var(--accent) 38px,
+    transparent 38px, transparent 64px
+  );
+  background-size: 64px 4px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* ============================================================
+   HERO CAROUSEL
+   ============================================================ */
+.hero-slide {
+  position: relative;
+  min-height: 520px;
+  height: 70vh;
+  max-height: 720px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .hero-slide {
+    min-height: 420px;
+    height: 80vh;
+    max-height: 560px;
+  }
+}
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(0,30,20,.82) 0%,
+    rgba(0,60,40,.65) 45%,
+    rgba(0,0,0,.18) 100%
+  );
+}
+.hero-slide-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,215,0,.18);
+  border: 1px solid rgba(255,215,0,.5);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: .78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  line-height: 1.08;
+  color: #fff;
+  margin-bottom: .6em;
+  text-shadow: 0 2px 14px rgba(0,0,0,.3);
+}
+.text-accent { color: var(--accent); }
+.hero-lead {
+  color: rgba(255,255,255,.85);
+  font-size: clamp(.95rem, 1.5vw, 1.15rem);
+  max-width: 520px;
+  margin-bottom: 0;
+}
+/* Carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 48px;
+  opacity: .8;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,.45);
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  background-size: 60%;
+}
+.carousel-indicators button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  opacity: .55;
+}
+.carousel-indicators button.active {
+  background: var(--accent);
+  opacity: 1;
+}
+
+/* ============================================================
+   SCOREBOARD STRIP (below carousel)
+   ============================================================ */
+.scoreboard-strip {
+  background: var(--primary-deep);
+  padding: 28px 0;
+  border-top: 3px solid var(--accent);
+}
+.scoreboard-strip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.strip-item {
+  text-align: center;
+  padding: 10px 32px;
+  flex: 1 1 130px;
+  min-width: 120px;
+}
+.strip-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,215,0,.25);
+  flex-shrink: 0;
+}
+@media (max-width: 575px) {
+  .strip-divider { display: none; }
+  .strip-item {
+    flex: 1 1 45%;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,215,0,.12);
+  }
+}
+.score-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.strip-label {
+  font-size: .72rem;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  margin-top: 6px;
+  display: block;
+  font-family: var(--font-body);
+}
+
+/* ============================================================
+   PAGE BANNER (inner pages)
+   ============================================================ */
+.page-banner {
+  background: linear-gradient(135deg, var(--primary-deep) 0%, #006644 100%);
+  color: #fff; padding: 70px 0 60px; position: relative; overflow: hidden;
+}
+.page-banner::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(255,215,0,.07) 0 2px, transparent 2px 90px);
+}
+.page-banner .eyebrow { color: var(--accent); }
+.page-banner h1 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.page-banner p.lead { color: rgba(255,255,255,.8); }
+@media (max-width: 767px) {
+  .page-banner { padding: 50px 0 40px; }
+}
+
+/* ============================================================
+   EYEBROW LABEL
+   ============================================================ */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: .76rem;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--primary); font-weight: 600; margin-bottom: 10px;
+}
+.eyebrow::before {
+  content: ""; width: 22px; height: 2px;
+  background: var(--accent); display: inline-block;
+}
+
+/* ============================================================
+   SPORT / FACILITY CARDS
+   ============================================================ */
+.pf-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  height: 100%;
+}
+.pf-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+.pf-card .card-accent { height: 6px; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+.pf-card-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card-icon {
+  width: 54px; height: 54px; border-radius: 14px;
+  background: var(--surface-alt);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; margin-bottom: 6px;
+}
+.pf-card h4 { font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
+.pf-card p { font-size: .92rem; margin-bottom: 6px; flex: 1; }
+.pf-tag {
+  display: inline-block; font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .6px;
+  background: var(--surface-alt); color: var(--primary);
+  padding: 4px 10px; border-radius: 999px;
+}
+.card-link {
+  font-family: var(--font-display); font-size: .85rem;
+  text-transform: uppercase; letter-spacing: .5px;
+  color: var(--primary); display: inline-flex; align-items: center;
+  gap: 6px; margin-top: 8px; font-weight: 600;
+}
+.card-link::after { content: "→"; transition: transform .2s ease; }
+.pf-card:hover .card-link::after { transform: translateX(4px); }
+.pf-card.clickable { cursor: pointer; }
+
+/* ============================================================
+   COACH CARDS
+   ============================================================ */
+.coach-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(150deg, var(--primary), var(--accent-dark));
+  color: #fff; font-family: var(--font-display);
+  font-weight: 700; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+}
+.coach-meta { font-size: .82rem; color: var(--ink-soft); }
+.sport-group-title {
+  font-family: var(--font-display); font-size: 1.3rem;
+  color: var(--primary-deep);
+  margin: 46px 0 20px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--line);
+  display: flex; align-items: center; gap: 10px;
+}
+.sport-group-title:first-of-type { margin-top: 0; }
+
+/* ============================================================
+   FACILITY CHIPS
+   ============================================================ */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip {
+  font-size: .74rem; background: var(--surface-alt);
+  color: var(--primary-dark);
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.feature-list { display: grid; gap: 22px; }
+.feature-item { display: flex; gap: 16px; align-items: flex-start; }
+.feature-icon {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: var(--surface-alt); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: var(--primary); border: 1px solid var(--line);
+}
+.feature-item h5 { margin-bottom: .25em; font-size: 1rem; color: var(--ink); }
+.feature-item p { margin: 0; font-size: .92rem; }
+
+.about-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 30px;
+  box-shadow: var(--shadow-sm); height: 100%;
+}
+.stat-row { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 22px; }
+.stat-row strong { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--primary); }
+.stat-row span { font-size: .78rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .5px; }
+
+/* ============================================================
+   SPORTS IMAGE CARDS (new feature — sport detail hero image)
+   ============================================================ */
+.sport-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   FORMS (inline on index.html)
+   ============================================================ */
+.tabs {
+  display: flex; gap: 8px; background: var(--surface-alt);
+  padding: 6px; border-radius: 999px; width: fit-content; margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  border: none; background: transparent; padding: 10px 22px; border-radius: 999px;
+  font-family: var(--font-display); font-size: .85rem;
+  text-transform: uppercase; letter-spacing: .5px;
+  color: var(--ink-soft); font-weight: 600; transition: all .2s ease;
+}
+.tab-btn.active { background: var(--primary); color: #fff; box-shadow: var(--shadow-sm); }
+
+.form-panel { display: none; }
+.form-panel.active { display: block; animation: fadeIn .25s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.pf-form-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow-sm);
+}
+@media (max-width: 575px) {
+  .pf-form-card { padding: 22px 16px; }
+}
+.pf-field { margin-bottom: 20px; }
+.pf-field label {
+  display: block; font-size: .82rem; font-weight: 600; margin-bottom: 7px;
+  color: var(--primary-deep);
+}
+.pf-field input, .pf-field select, .pf-field textarea {
+  width: 100%; padding: 12px 14px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line); background: #fff; color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem;
+  transition: border-color .18s, box-shadow .18s;
+}
+.pf-field input:focus, .pf-field select:focus, .pf-field textarea:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,168,107,.12); outline: none;
+}
+.pf-field input.invalid, .pf-field select.invalid { border-color: var(--danger); }
+.error-msg { display: block; font-size: .76rem; color: var(--danger); margin-top: 5px; min-height: 14px; }
+
+.form-success {
+  display: none; background: #EAF6EF;
+  border: 1.5px solid var(--accent-dark); color: var(--primary-deep);
+  padding: 16px 18px; border-radius: var(--radius-sm);
+  font-size: .92rem; margin-bottom: 18px;
+}
+.form-success.show { display: block; }
+.form-note { font-size: .78rem; color: var(--ink-soft); margin-top: 14px; }
+.locked-field { background: var(--surface-alt) !important; color: var(--ink-soft); cursor: not-allowed; }
+
+.info-list { display: grid; gap: 14px; margin: 18px 0 26px; padding: 0; list-style: none; }
+.info-list li { display: flex; gap: 10px; font-size: .95rem; color: var(--ink); }
+.info-list li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+
+/* field / field-row used by sport detail JS-generated form */
+.field { margin-bottom: 18px; }
+.field label {
+  display: block; font-size: .82rem; font-weight: 600; margin-bottom: 7px;
+  color: var(--primary-deep);
+}
+.field input, .field select {
+  width: 100%; padding: 12px 14px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line); background: #fff; color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem;
+  transition: border-color .18s, box-shadow .18s;
+}
+.field input:focus, .field select:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,168,107,.12); outline: none;
+}
+.field input.invalid, .field select.invalid { border-color: var(--danger); }
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   DETAIL PAGES (sport.html / coach.html)
+   ============================================================ */
+.detail-hero {
+  background: linear-gradient(135deg, var(--primary-deep), #006644);
+  color: #fff; padding: 60px 0 50px; position: relative; overflow: hidden;
+}
+.detail-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(255,215,0,.07) 0 2px, transparent 2px 90px);
+}
+.detail-hero-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.detail-icon {
+  width: 78px; height: 78px; border-radius: 18px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,215,0,.35);
+  display: flex; align-items: center; justify-content: center; font-size: 2.2rem;
+}
+.detail-hero h1 { margin-bottom: .15em; color: #fff; }
+.breadcrumb-pf { font-size: .8rem; color: #9FC8BB; margin-bottom: 14px; }
+.breadcrumb-pf a { color: var(--accent); }
+/* Also style .breadcrumb as used in JS */
+.breadcrumb {
+  font-size: .8rem; color: #9FC8BB; margin-bottom: 14px;
+  display: block; position: relative; z-index: 1;
+}
+.breadcrumb a { color: var(--accent); }
+
+.kv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+.kv-grid div { background: var(--surface-alt); border-radius: var(--radius-sm); padding: 14px 16px; }
+.kv-grid span { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .5px; color: var(--ink-soft); margin-bottom: 4px; }
+.kv-grid strong { font-family: var(--font-display); color: var(--primary-deep); font-size: 1.05rem; }
+@media (max-width: 479px) {
+  .kv-grid { grid-template-columns: 1fr; }
+}
+
+.not-found { text-align: center; padding: 70px 0; }
+
+/* ============================================================
+   DETAIL TWO-COLUMN LAYOUT (sport.html / coach.html)
+   JS builds .row.g-5.align-items-start with two direct divs
+   ============================================================ */
+#sportDetail .container.py-5 .row > div:first-child,
+#coachDetail .container.py-5 .row > div:first-child {
+  flex: 0 0 auto;
+  width: 58.333333%;
+}
+#sportDetail .container.py-5 .row > div:last-child,
+#coachDetail .container.py-5 .row > div:last-child {
+  flex: 0 0 auto;
+  width: 41.666667%;
+}
+@media (max-width: 767px) {
+  #sportDetail .container.py-5 .row > div:first-child,
+  #sportDetail .container.py-5 .row > div:last-child,
+  #coachDetail .container.py-5 .row > div:first-child,
+  #coachDetail .container.py-5 .row > div:last-child {
+    width: 100%;
+  }
+}
+
+/* Make script.js-generated form card match Bootstrap card style */
+#sportDetail .form-card,
+#coachDetail .form-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+}
+@media (max-width: 575px) {
+  #sportDetail .form-card,
+  #coachDetail .form-card { padding: 20px 16px; }
+}
+
+/* page-banner-inner-wrap used by JS */
+.page-banner-inner-wrap.detail-hero {
+  padding: 50px 0 40px;
+}
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner { background: linear-gradient(90deg, var(--primary-deep), var(--primary-dark)); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-section { background: var(--primary-deep); color: #CFE7DD; }
+.footer-section h5, .footer-section h6 { color: #fff; }
+.footer-section p, .footer-section li { font-size: .88rem; color: #9FC8BB; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a:hover { color: var(--accent); }
+.footer-social a {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(255,255,255,.1); color: #9FC8BB;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; transition: background .2s, color .2s;
+}
+.footer-social a:hover { background: var(--accent); color: var(--primary-deep); }
+
+/* ============================================================
+   REGISTER PAGE
+   ============================================================ */
+.register-hero {
+  background: linear-gradient(135deg, var(--primary-deep) 0%, #006644 100%);
+  padding: 50px 0 40px; color: #fff;
+}
+.register-hero h1 { color: #fff; font-size: 2.2rem; }
+.register-hero p { color: rgba(255,255,255,.8); }
+.register-section { padding: 60px 0; background: var(--bg); }
+.register-section .form-label { font-weight: 600; font-size: .85rem; color: var(--primary-deep); }
+.register-section .form-control,
+.register-section .form-select {
+  border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  transition: border-color .18s, box-shadow .18s;
+}
+.register-section .form-control:focus,
+.register-section .form-select:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,168,107,.12);
+}
+.register-section .card {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.register-section .card-header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: var(--radius) var(--radius) 0 0 !important;
+  border: none;
+}
+
+/* ============================================================
+   TESTIMONIALS SECTION (new feature)
+   ============================================================ */
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 14px; left: 22px;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: .25;
+}
+.testimonial-card p { font-size: .97rem; color: var(--ink); font-style: italic; position: relative; z-index:1; }
+.testimonial-name { font-family: var(--font-display); font-weight: 600; color: var(--primary-deep); margin-top: 18px; }
+.testimonial-sport { font-size: .75rem; text-transform: uppercase; letter-spacing:.8px; color: var(--ink-soft); }
+
+/* ============================================================
+   SPORTS SHOWCASE SECTION (new feature on index)
+   ============================================================ */
+.sport-showcase-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  transition: transform .3s ease;
+}
+.pf-card:hover .sport-showcase-img { transform: scale(1.04); }
+.sport-img-wrap { overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.text-primary-pf { color: var(--primary) !important; }
+.bg-primary-pf { background: var(--primary) !important; }
+.section-alt { background: var(--surface-alt); }
+
+/* ============================================================
+   RESPONSIVE FIXES
+   ============================================================ */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(245,255,253,.98);
+    border-top: 1px solid var(--line);
+    padding: 16px 0 8px;
+    margin-top: 8px;
+  }
+  .navbar-nav .nav-link.active::after { display: none; }
+}
+@media (max-width: 767px) {
+  .stat-row { gap: 16px; }
+  .about-card { padding: 22px; }
+  .kv-grid { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PeakForm Sports Academy — Train Like a Champion</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="brand-mark">PF</span>
+      <span class="d-flex flex-column lh-1">PeakForm<small class="brand-sub">Sports Academy</small></span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="coaches.html">Coaches</a></li>
+        <li class="nav-item"><a class="nav-link" href="facilities.html">Facilities</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#join">Login / Register</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="btn btn-accent rounded-pill px-4" href="register.html">Register Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ HERO CAROUSEL ============ -->
+  <section id="home">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 — Football -->
+        <div class="carousel-item active">
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&q=80');">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-slide-content">
+              <div class="row">
+                <div class="col-lg-7 col-md-9">
+                  <span class="hero-eyebrow">⚽ Football Programme</span>
+                  <h1 class="hero-title">Train Like a<br><span class="text-accent">Champion.</span></h1>
+                  <p class="hero-lead">Build vision, first touch and match intelligence on a full-size floodlit pitch with expert AFC-certified coaches.</p>
+                  <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="sport.html?sport=football" class="btn btn-accent rounded-pill px-4 py-2 fw-bold">View Football Programme</a>
+                    <a href="register.html" class="btn btn-pf-outline rounded-pill px-4 py-2">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 — Cricket -->
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600&q=80');">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-slide-content">
+              <div class="row">
+                <div class="col-lg-7 col-md-9">
+                  <span class="hero-eyebrow">🏏 Cricket Programme</span>
+                  <h1 class="hero-title">Compete Like<br><span class="text-accent">a Pro.</span></h1>
+                  <p class="hero-lead">Net sessions, match simulation and biomechanics-backed coaching — for batters, bowlers and fielders at every level.</p>
+                  <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="sport.html?sport=cricket" class="btn btn-accent rounded-pill px-4 py-2 fw-bold">View Cricket Programme</a>
+                    <a href="register.html" class="btn btn-pf-outline rounded-pill px-4 py-2">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 — Swimming -->
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1600&q=80');">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-slide-content">
+              <div class="row">
+                <div class="col-lg-7 col-md-9">
+                  <span class="hero-eyebrow">🏊 Swimming Programme</span>
+                  <h1 class="hero-title">Faster. Stronger.<br><span class="text-accent">Every Lap.</span></h1>
+                  <p class="hero-lead">Stroke efficiency, underwater video analysis and race-pace training in our 8-lane semi-Olympic heated pool.</p>
+                  <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="sport.html?sport=swimming" class="btn btn-accent rounded-pill px-4 py-2 fw-bold">View Swimming Programme</a>
+                    <a href="register.html" class="btn btn-pf-outline rounded-pill px-4 py-2">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 — Athletics -->
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&q=80');">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-slide-content">
+              <div class="row">
+                <div class="col-lg-7 col-md-9">
+                  <span class="hero-eyebrow">🏃 Athletics Programme</span>
+                  <h1 class="hero-title">8 Sports.<br><span class="text-accent">One Academy.</span></h1>
+                  <p class="hero-lead">Sprints, distance, jumps and throws — on a certified synthetic 8-lane track with periodised plans built for your next meet.</p>
+                  <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="courses.html" class="btn btn-accent rounded-pill px-4 py-2 fw-bold">Explore All Courses</a>
+                    <a href="register.html" class="btn btn-pf-outline rounded-pill px-4 py-2">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.carousel-inner -->
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div><!-- /#heroCarousel -->
+
+    <!-- SCOREBOARD STRIP below carousel -->
+    <div class="scoreboard-strip">
+      <div class="container">
+        <div class="scoreboard-strip-grid">
+          <div class="strip-item">
+            <span class="score-num" data-target="1200" data-suffix="+">0</span>
+            <span class="strip-label">Athletes Trained</span>
+          </div>
+          <div class="strip-divider"></div>
+          <div class="strip-item">
+            <span class="score-num" data-target="24">0</span>
+            <span class="strip-label">Expert Coaches</span>
+          </div>
+          <div class="strip-divider"></div>
+          <div class="strip-item">
+            <span class="score-num" data-target="8">0</span>
+            <span class="strip-label">Sports Offered</span>
+          </div>
+          <div class="strip-divider"></div>
+          <div class="strip-item">
+            <span class="score-num" data-target="12" data-suffix="+">0</span>
+            <span class="strip-label">Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="lane-divider"></div>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="py-5">
+    <div class="container py-4">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <span class="eyebrow">About Us</span>
+          <h2 class="mb-3" style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);">Built for athletes who refuse to settle</h2>
+          <p class="mb-4">We started PeakForm with one idea: every athlete deserves coaching that's structured, measured and built around them — not a one-size-fits-all class.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🎯</div>
+              <div>
+                <h5>Personalised Training Plans</h5>
+                <p>Every athlete follows a plan built around their level, goals and competition calendar.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <div>
+                <h5>Sports-Science-Backed Coaching</h5>
+                <p>Video analysis, fitness testing and recovery protocols sit behind every programme.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏟️</div>
+              <div>
+                <h5>Modern, Full-Scale Facilities</h5>
+                <p>From a synthetic track to a heated pool, athletes train on competition-grade surfaces.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏆</div>
+              <div>
+                <h5>A Real Pathway to Competition</h5>
+                <p>Internal tournaments and trial pathways connect training directly to match play.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex">
+          <div class="about-card w-100">
+            <!-- Bootstrap placeholder image for about section -->
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80"
+                 alt="Athletes training at PeakForm"
+                 class="w-100 mb-4"
+                 style="border-radius:10px;height:200px;object-fit:cover;"
+                 loading="lazy">
+            <h3 style="color:var(--primary-deep);">Our Story</h3>
+            <p>PeakForm opened its doors over a decade ago with a single football pitch and three coaches. Today, the academy trains athletes across eight sports, with a coaching staff built from former state and national-level competitors.</p>
+            <p>Our approach hasn't changed: technique first, fitness second, competition third — in that order, every time.</p>
+            <div class="stat-row">
+              <div><strong>2014</strong><span>Founded</span></div>
+              <div><strong>8</strong><span>Sports</span></div>
+              <div><strong>24</strong><span>Coaches</span></div>
+              <div><strong>6</strong><span>Acre Campus</span></div>
+            </div>
+            <a href="facilities.html" class="btn btn-pf-primary rounded-pill px-4 mt-4">View Facilities</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lane-divider"></div>
+
+  <!-- ============ SPORTS SHOWCASE ============ -->
+  <section class="py-5 section-alt">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="eyebrow d-block justify-content-center">Our Programmes</span>
+        <h2 style="color:var(--ink);font-size:clamp(1.8rem,3vw,2.4rem);">Eight sports. One coaching standard.</h2>
+        <p class="mx-auto" style="max-width:540px;">Pick a sport below to explore the programme details, schedule and coaching team.</p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-6 col-lg-3">
+          <a href="sport.html?sport=football" class="text-decoration-none d-block h-100">
+            <div class="pf-card clickable h-100">
+              <div class="sport-img-wrap">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=75" alt="Football" class="sport-showcase-img" loading="lazy">
+              </div>
+              <div class="pf-card-body">
+                <h4>⚽ Football</h4>
+                <p>Build vision, first touch and match intelligence on a full-size pitch.</p>
+                <span class="card-link">View Programme</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <a href="sport.html?sport=cricket" class="text-decoration-none d-block h-100">
+            <div class="pf-card clickable h-100">
+              <div class="sport-img-wrap">
+                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=75" alt="Cricket" class="sport-showcase-img" loading="lazy">
+              </div>
+              <div class="pf-card-body">
+                <h4>🏏 Cricket</h4>
+                <p>Net sessions, match simulation and biomechanics-backed coaching.</p>
+                <span class="card-link">View Programme</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <a href="sport.html?sport=badminton" class="text-decoration-none d-block h-100">
+            <div class="pf-card clickable h-100">
+              <div class="sport-img-wrap">
+                <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=75" alt="Badminton" class="sport-showcase-img" loading="lazy">
+              </div>
+              <div class="pf-card-body">
+                <h4>🏸 Badminton</h4>
+                <p>Court craft, deception and explosive footwork.</p>
+                <span class="card-link">View Programme</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <a href="sport.html?sport=swimming" class="text-decoration-none d-block h-100">
+            <div class="pf-card clickable h-100">
+              <div class="sport-img-wrap">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=75" alt="Swimming" class="sport-showcase-img" loading="lazy">
+              </div>
+              <div class="pf-card-body">
+                <h4>🏊 Swimming</h4>
+                <p>Stroke efficiency, breathing technique and race-pace training.</p>
+                <span class="card-link">View Programme</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      <div class="text-center mt-4">
+        <a href="courses.html" class="btn btn-pf-primary rounded-pill px-5 py-2">See All 8 Sports →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lane-divider"></div>
+
+  <!-- ============ TESTIMONIALS (NEW) ============ -->
+  <section class="py-5">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="eyebrow d-block justify-content-center">What Athletes Say</span>
+        <h2 style="color:var(--ink);font-size:clamp(1.8rem,3vw,2.4rem);">Straight from the track, pitch and pool.</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>The cricket coaching here is unlike anything I've experienced. The high-speed camera review of my bowling action changed everything — I dropped my average by four runs in one term.</p>
+            <div class="testimonial-name">Karthik S.</div>
+            <div class="testimonial-sport">Cricket · Age 17</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>I joined as a complete beginner in swimming. Within two terms I was competing at district level. The underwater video sessions showed me exactly what I was doing wrong.</p>
+            <div class="testimonial-name">Preethi R.</div>
+            <div class="testimonial-sport">Swimming · Age 14</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>The badminton footwork drills were intense in the best way. Coach Srinivas pushes you right up to your limit, and the results speak — I've won three state-level junior medals since joining.</p>
+            <div class="testimonial-name">Arun M.</div>
+            <div class="testimonial-sport">Badminton · Age 16</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lane-divider"></div>
+
+  <!-- ============ JOIN: LOGIN / SIGNUP / REGISTER ============ -->
+  <section id="join" class="py-5 section-alt">
+    <div class="container py-4">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <span class="eyebrow">Get Started</span>
+          <h2 class="mb-3" style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);">Join the Academy</h2>
+          <p class="mb-4">Register directly for a sport, sign up for an account, or log back in — all from this page. No payment is required to register.</p>
+          <ul class="info-list">
+            <li>Our admissions team contacts you within 48 hours</li>
+            <li>You're slotted into a trial batch matching your level</li>
+            <li>A coach evaluates you and recommends the right programme</li>
+            <li>You receive your training schedule and kit checklist</li>
+          </ul>
+          <div class="about-card mt-4">
+            <h5 class="mt-0" style="color:var(--primary-deep);">Prefer a dedicated page?</h5>
+            <p>Open our full-page registration form for a more detailed sign-up experience.</p>
+            <a class="btn btn-pf-primary rounded-pill px-4" href="register.html">Open Register Page →</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="pf-form-card">
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="registerPanel" type="button">Register</button>
+              <button class="tab-btn" data-tab="loginPanel" type="button">Login</button>
+              <button class="tab-btn" data-tab="signupPanel" type="button">Sign Up</button>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div id="registerPanel" class="form-panel active">
+              <div class="form-success"></div>
+              <form id="registerForm" novalidate>
+                <div class="pf-field">
+                  <label for="r-name">Full Name</label>
+                  <input type="text" id="r-name" name="reg-name" placeholder="Your full name">
+                  <span class="error-msg"></span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <div class="pf-field">
+                      <label for="r-age">Age</label>
+                      <input type="number" id="r-age" name="reg-age" placeholder="e.g. 16">
+                      <span class="error-msg"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="pf-field">
+                      <label for="r-phone">Phone Number</label>
+                      <input type="tel" id="r-phone" name="reg-phone" placeholder="10-digit number">
+                      <span class="error-msg"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pf-field">
+                  <label for="r-email">Email Address</label>
+                  <input type="email" id="r-email" name="reg-email" placeholder="you@example.com">
+                  <span class="error-msg"></span>
+                </div>
+                <div class="pf-field">
+                  <label for="r-sport">Select Sport</label>
+                  <select id="r-sport" name="reg-sport">
+                    <option value="">Choose a sport…</option>
+                    <option value="football">⚽ Football</option>
+                    <option value="cricket">🏏 Cricket</option>
+                    <option value="basketball">🏀 Basketball</option>
+                    <option value="volleyball">🏐 Volleyball</option>
+                    <option value="badminton">🏸 Badminton</option>
+                    <option value="athletics">🏃 Athletics</option>
+                    <option value="tennis">🎾 Tennis</option>
+                    <option value="swimming">🏊 Swimming</option>
+                  </select>
+                  <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn btn-pf-primary w-100 rounded-pill py-3">Register Now</button>
+              </form>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <div id="loginPanel" class="form-panel">
+              <div class="form-success"></div>
+              <form id="loginForm" novalidate>
+                <div class="pf-field">
+                  <label for="l-email">Email Address</label>
+                  <input type="email" id="l-email" name="login-email" placeholder="you@example.com">
+                  <span class="error-msg"></span>
+                </div>
+                <div class="pf-field">
+                  <label for="l-password">Password</label>
+                  <input type="password" id="l-password" name="login-password" placeholder="Minimum 6 characters">
+                  <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn btn-pf-primary w-100 rounded-pill py-3">Log In</button>
+                <p class="form-note">This is a front-end demo — no real account data is stored or sent anywhere.</p>
+              </form>
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div id="signupPanel" class="form-panel">
+              <div class="form-success"></div>
+              <form id="signupForm" novalidate>
+                <div class="pf-field">
+                  <label for="s-name">Full Name</label>
+                  <input type="text" id="s-name" name="signup-name" placeholder="Your full name">
+                  <span class="error-msg"></span>
+                </div>
+                <div class="pf-field">
+                  <label for="s-email">Email Address</label>
+                  <input type="email" id="s-email" name="signup-email" placeholder="you@example.com">
+                  <span class="error-msg"></span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <div class="pf-field">
+                      <label for="s-password">Password</label>
+                      <input type="password" id="s-password" name="signup-password" placeholder="Min. 6 characters">
+                      <span class="error-msg"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="pf-field">
+                      <label for="s-confirm">Confirm Password</label>
+                      <input type="password" id="s-confirm" name="signup-confirm" placeholder="Re-enter password">
+                      <span class="error-msg"></span>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-pf-primary w-100 rounded-pill py-3">Create Account</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lane-divider"></div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer-section pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6">
+        <h5>PeakForm Sports Academy</h5>
+        <p>A multi-sport training academy built around technique, sports science and a real pathway to competitive play.</p>
+        <div class="d-flex gap-2 footer-social mt-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="coaches.html">Coaches</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Programmes</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="sport.html?sport=football">Football</a></li>
+          <li><a href="sport.html?sport=cricket">Cricket</a></li>
+          <li><a href="sport.html?sport=swimming">Swimming</a></li>
+          <li><a href="sport.html?sport=tennis">Tennis</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact</h6>
+        <ul class="list-unstyled footer-links">
+          <li><i class="bi bi-geo-alt me-2"></i>Race Course Road, Erode, Tamil Nadu</li>
+          <li><i class="bi bi-envelope me-2"></i>hello@peakform.academy</li>
+          <li><i class="bi bi-telephone me-2"></i>+91 98765 00000</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 mt-4">
+    <div class="d-flex flex-wrap justify-content-between gap-2 small" style="color:#7FAFA0;">
+      <span>© <span id="year"></span> PeakForm Sports Academy. All rights reserved.</span>
+      <span>Built for athletes, by athletes.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('#mainNav .nav-link').forEach(function(link){
+    link.addEventListener('click', function(){
+      var nav = document.getElementById('mainNav');
+      if(nav.classList.contains('show')){
+        var bsCollapse = bootstrap.Collapse.getInstance(nav);
+        if(bsCollapse) bsCollapse.hide();
+      }
+    });
+  });
+</script>
+</body>
+</html>

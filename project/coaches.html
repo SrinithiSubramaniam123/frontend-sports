@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaches — PeakForm Sports Academy</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="brand-mark">PF</span>
+      <span class="d-flex flex-column lh-1">PeakForm<small class="brand-sub">Sports Academy</small></span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="coaches.html">Coaches</a></li>
+        <li class="nav-item"><a class="nav-link" href="facilities.html">Facilities</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#join">Login / Register</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="btn btn-accent rounded-pill px-4" href="register.html">Register Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="container py-4 position-relative" style="z-index:1; max-width:680px;">
+      <span class="eyebrow">Our Coaches</span>
+      <h1 class="mt-2">24 specialist coaches. Eight sports.</h1>
+      <p class="lead mb-0">Every sport at PeakForm is led by at least three specialist coaches. Tap a coach to see their achievements, training methods and background.</p>
+    </div>
+  </section>
+
+  <!-- COACHES GRID (built by script.js) -->
+  <section class="py-5">
+    <div class="container py-3">
+      <div id="coachesGrid"></div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner py-5">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div>
+        <h3 class="h4 text-white mb-1">Ready to train with one of our coaches?</h3>
+        <p class="mb-0 text-white-50">Registration takes less than two minutes — no payment required.</p>
+      </div>
+      <a href="register.html" class="btn btn-accent btn-lg rounded-pill px-4">Register Now</a>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer-section pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6">
+        <h5>PeakForm Sports Academy</h5>
+        <p>A multi-sport training academy built around technique, sports science and a real pathway to competitive play.</p>
+        <div class="d-flex gap-2 footer-social mt-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Programmes</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="sport.html?sport=football">Football</a></li>
+          <li><a href="sport.html?sport=basketball">Basketball</a></li>
+          <li><a href="sport.html?sport=athletics">Athletics</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact</h6>
+        <ul class="list-unstyled footer-links">
+          <li><i class="bi bi-geo-alt me-2"></i>Race Course Road, Erode, Tamil Nadu</li>
+          <li><i class="bi bi-envelope me-2"></i>hello@peakform.academy</li>
+          <li><i class="bi bi-telephone me-2"></i>+91 98765 00000</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 mt-4">
+    <div class="d-flex flex-wrap justify-content-between gap-2 small" style="color:#7FAFA0;">
+      <span>© <span id="year"></span> PeakForm Sports Academy. All rights reserved.</span>
+      <span>Built for athletes, by athletes.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll("#mainNav .nav-link").forEach(function(link){
+    link.addEventListener("click", function(){
+      var nav = document.getElementById("mainNav");
+      if(nav.classList.contains("show")){
+        var bsCollapse = bootstrap.Collapse.getInstance(nav);
+        if(bsCollapse) bsCollapse.hide();
+      }
+    });
+  });
+</script>
+</body>
+</html>

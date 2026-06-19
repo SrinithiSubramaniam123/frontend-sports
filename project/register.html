@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — PeakForm Sports Academy</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="brand-mark">PF</span>
+      <span class="d-flex flex-column lh-1">PeakForm<small class="brand-sub">Sports Academy</small></span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="coaches.html">Coaches</a></li>
+        <li class="nav-item"><a class="nav-link" href="facilities.html">Facilities</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#join">Login / Register</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="btn btn-accent rounded-pill px-4 active" href="register.html">Register Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- REGISTER HERO -->
+<section class="register-hero">
+  <div class="container position-relative" style="z-index:1;">
+    <div class="row">
+      <div class="col-lg-7">
+        <span class="eyebrow">Join PeakForm</span>
+        <h1 class="mt-2">🏅 Athlete Registration — 2026</h1>
+        <p class="lead mb-0">Fill in the form below and our team will contact you within 48 hours to confirm your trial batch. No payment required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER FORM -->
+<section class="register-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        <!-- Success message -->
+        <div id="reg-success" class="alert alert-success d-none rounded-3 mb-4" role="alert">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <strong>Registration Successful!</strong> Welcome to PeakForm Sports Academy. Our team will contact you shortly.
+        </div>
+
+        <form id="fullRegisterForm" novalidate>
+
+          <!-- PERSONAL DETAILS -->
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-white"><i class="bi bi-person-fill me-2"></i>Personal Details</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="reg-name" placeholder="Your full name" required>
+                  <div class="invalid-feedback">Please enter your full name (letters only, 2–40 characters).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Date of Birth</label>
+                  <input type="date" class="form-control" id="reg-dob">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Age <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="reg-age" placeholder="e.g. 16" min="5" max="40" required>
+                  <div class="invalid-feedback">Age must be between 5 and 40.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Gender <span class="text-danger">*</span></label>
+                  <select class="form-select" id="reg-gender" required>
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="invalid-feedback">Please select your gender.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Blood Group</label>
+                  <select class="form-select" id="reg-blood">
+                    <option value="">Select (optional)</option>
+                    <option>A+</option><option>A-</option>
+                    <option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option>
+                    <option>O+</option><option>O-</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTACT DETAILS -->
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-white"><i class="bi bi-telephone-fill me-2"></i>Contact Details</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text">+91</span>
+                    <input type="tel" class="form-control" id="reg-phone" placeholder="10-digit number" required>
+                  </div>
+                  <div class="invalid-feedback" style="display:none;" id="phone-error">Enter a valid 10-digit number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="reg-email" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">Enter a valid email address.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">City</label>
+                  <input type="text" class="form-control" placeholder="Your city">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">State</label>
+                  <input type="text" class="form-control" placeholder="Tamil Nadu" value="Tamil Nadu">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Pincode <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="reg-pincode" placeholder="6-digit pincode" required>
+                  <div class="invalid-feedback">Enter a valid 6-digit pincode.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Residential Address</label>
+                  <textarea class="form-control" rows="3" placeholder="House / Street / Area"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPORTS INFORMATION -->
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-white"><i class="bi bi-trophy-fill me-2"></i>Sports Information</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Select Sport <span class="text-danger">*</span></label>
+                  <select class="form-select" id="reg-sport" required>
+                    <option value="">Choose a sport…</option>
+                    <option value="football">⚽ Football</option>
+                    <option value="cricket">🏏 Cricket</option>
+                    <option value="basketball">🏀 Basketball</option>
+                    <option value="volleyball">🏐 Volleyball</option>
+                    <option value="badminton">🏸 Badminton</option>
+                    <option value="athletics">🏃 Athletics</option>
+                    <option value="tennis">🎾 Tennis</option>
+                    <option value="swimming">🏊 Swimming</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a sport.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Experience Level</label>
+                  <select class="form-select">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Years of Experience</label>
+                  <input type="number" class="form-control" placeholder="e.g. 2" min="0" max="30">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Preferred Training Batch</label>
+                  <select class="form-select">
+                    <option>Morning Batch</option>
+                    <option>Evening Batch</option>
+                    <option>Weekend Batch</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Previous Achievements</label>
+                  <textarea class="form-control" rows="3" placeholder="District titles, school medals, etc. (optional)"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARENT / GUARDIAN DETAILS -->
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-white"><i class="bi bi-people-fill me-2"></i>Parent / Guardian Details</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Parent / Guardian Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="reg-parent" placeholder="Full name" required>
+                  <div class="invalid-feedback">Please enter parent/guardian name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Parent Contact Number <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text">+91</span>
+                    <input type="tel" class="form-control" id="reg-parent-phone" placeholder="10-digit number" required>
+                  </div>
+                  <div class="invalid-feedback" id="pphone-error" style="display:none;">Enter a valid 10-digit number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Emergency Contact Number</label>
+                  <input type="tel" class="form-control" placeholder="Alternative number (optional)">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Relationship to Athlete</label>
+                  <input type="text" class="form-control" placeholder="e.g. Father, Mother, Guardian">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MEDICAL INFORMATION -->
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-white"><i class="bi bi-heart-pulse-fill me-2"></i>Medical Information</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label">Medical Conditions / Allergies</label>
+                  <textarea class="form-control" rows="3" placeholder="Any conditions, allergies or injuries the coaching staff should know about (optional)"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DECLARATION -->
+          <div class="card mb-4">
+            <div class="card-body p-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="reg-agree" required>
+                <label class="form-check-label" for="reg-agree">
+                  I certify that all the information provided above is true and correct to the best of my knowledge. I agree to the academy's training and conduct guidelines.
+                </label>
+                <div class="invalid-feedback">You must accept the declaration to proceed.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex mb-5">
+            <button type="submit" class="btn btn-pf-primary btn-lg rounded-pill px-5 py-3 flex-grow-1">
+              <i class="bi bi-check-circle me-2"></i>Submit Registration
+            </button>
+            <a href="index.html" class="btn btn-outline-secondary btn-lg rounded-pill px-4 py-3">
+              Cancel
+            </a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-section pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6">
+        <h5>PeakForm Sports Academy</h5>
+        <p>A multi-sport training academy built around technique, sports science and a real pathway to competitive play.</p>
+        <div class="d-flex gap-2 footer-social mt-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Programmes</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="sport.html?sport=football">Football</a></li>
+          <li><a href="sport.html?sport=cricket">Cricket</a></li>
+          <li><a href="sport.html?sport=swimming">Swimming</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact</h6>
+        <ul class="list-unstyled footer-links">
+          <li><i class="bi bi-geo-alt me-2"></i>Race Course Road, Erode, Tamil Nadu</li>
+          <li><i class="bi bi-envelope me-2"></i>hello@peakform.academy</li>
+          <li><i class="bi bi-telephone me-2"></i>+91 98765 00000</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 mt-4">
+    <div class="d-flex flex-wrap justify-content-between gap-2 small" style="color:#7FAFA0;">
+      <span>© <span id="year"></span> PeakForm Sports Academy. All rights reserved.</span>
+      <span>Built for athletes, by athletes.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll("#mainNav .nav-link").forEach(function(link){
+    link.addEventListener("click", function(){
+      var nav = document.getElementById("mainNav");
+      if(nav.classList.contains("show")){
+        var bsCollapse = bootstrap.Collapse.getInstance(nav);
+        if(bsCollapse) bsCollapse.hide();
+      }
+    });
+  });
+</script>
+<script>
+// Full registration page validation
+(function(){
+  const form = document.getElementById('fullRegisterForm');
+  if(!form) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name    = document.getElementById('reg-name');
+    const age     = document.getElementById('reg-age');
+    const gender  = document.getElementById('reg-gender');
+    const phone   = document.getElementById('reg-phone');
+    const email   = document.getElementById('reg-email');
+    const pincode = document.getElementById('reg-pincode');
+    const sport   = document.getElementById('reg-sport');
+    const parent  = document.getElementById('reg-parent');
+    const pphone  = document.getElementById('reg-parent-phone');
+    const agree   = document.getElementById('reg-agree');
+
+    let valid = true;
+
+    // Name
+    const nameOk = /^[a-zA-Z\s]{2,40}$/.test(name.value.trim());
+    name.classList.toggle('is-invalid', !nameOk);
+    name.classList.toggle('is-valid', nameOk);
+    if(!nameOk) valid = false;
+
+    // Age
+    const ageOk = age.value !== '' && +age.value >= 5 && +age.value <= 40;
+    age.classList.toggle('is-invalid', !ageOk);
+    age.classList.toggle('is-valid', ageOk);
+    if(!ageOk) valid = false;
+
+    // Gender
+    const genderOk = gender.value !== '';
+    gender.classList.toggle('is-invalid', !genderOk);
+    gender.classList.toggle('is-valid', genderOk);
+    if(!genderOk) valid = false;
+
+    // Phone
+    const phoneOk = /^[0-9]{10}$/.test(phone.value.trim());
+    phone.classList.toggle('is-invalid', !phoneOk);
+    phone.classList.toggle('is-valid', phoneOk);
+    document.getElementById('phone-error').style.display = phoneOk ? 'none' : 'block';
+    if(!phoneOk) valid = false;
+
+    // Email
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    email.classList.toggle('is-invalid', !emailOk);
+    email.classList.toggle('is-valid', emailOk);
+    if(!emailOk) valid = false;
+
+    // Pincode
+    const pincodeOk = /^[0-9]{6}$/.test(pincode.value.trim());
+    pincode.classList.toggle('is-invalid', !pincodeOk);
+    pincode.classList.toggle('is-valid', pincodeOk);
+    if(!pincodeOk) valid = false;
+
+    // Sport
+    const sportOk = sport.value !== '';
+    sport.classList.toggle('is-invalid', !sportOk);
+    sport.classList.toggle('is-valid', sportOk);
+    if(!sportOk) valid = false;
+
+    // Parent name
+    const parentOk = parent.value.trim().length >= 2;
+    parent.classList.toggle('is-invalid', !parentOk);
+    parent.classList.toggle('is-valid', parentOk);
+    if(!parentOk) valid = false;
+
+    // Parent phone
+    const pphoneOk = /^[0-9]{10}$/.test(pphone.value.trim());
+    pphone.classList.toggle('is-invalid', !pphoneOk);
+    pphone.classList.toggle('is-valid', pphoneOk);
+    document.getElementById('pphone-error').style.display = pphoneOk ? 'none' : 'block';
+    if(!pphoneOk) valid = false;
+
+    // Agreement
+    agree.classList.toggle('is-invalid', !agree.checked);
+    if(!agree.checked) valid = false;
+
+    if(valid){
+      const successDiv = document.getElementById('reg-success');
+      successDiv.classList.remove('d-none');
+      successDiv.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i><strong>Registration Successful!</strong> Welcome to PeakForm, ' + name.value.trim() + '! Our team will contact you within 48 hours to confirm your batch for ' + sport.options[sport.selectedIndex].text + '.';
+      form.reset();
+      // Remove validation classes
+      form.querySelectorAll('.is-valid,.is-invalid').forEach(el => {
+        el.classList.remove('is-valid','is-invalid');
+      });
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  });
+})();
+</script>
+</body>
+</html>
